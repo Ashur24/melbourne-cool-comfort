@@ -26,7 +26,7 @@ const testimonials = [
     name: "Mark Davidson",
     location: "South Yarra",
     rating: 5,
-    text: "We've used Melbourne Cooling for our office HVAC needs for years. Reliable, efficient, and always professional. Wouldn't go anywhere else.",
+    text: "We've used Ash Air Solutions for our office HVAC needs for years. Reliable, efficient, and always professional. Wouldn't go anywhere else.",
     service: "Commercial HVAC",
   },
 ];

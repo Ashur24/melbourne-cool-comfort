@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import logo from "@/assets/logo.jpg";
 
 const navLinks = [
   { name: "Home", href: "#home" },
@@ -53,14 +54,8 @@ export function Header() {
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
-            <a href="#home" className="flex items-center gap-2">
-              <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center">
-                <span className="text-primary-foreground font-heading font-bold text-xl">MC</span>
-              </div>
-              <div className="hidden sm:block">
-                <span className="font-heading font-bold text-xl text-foreground">Melbourne</span>
-                <span className="font-heading font-bold text-xl text-secondary"> Cooling</span>
-              </div>
+            <a href="#home" className="flex items-center">
+              <img src={logo} alt="Ash Air Solutions" className="h-12 sm:h-14 w-auto" />
             </a>
 
             {/* Desktop Navigation */}

@@ -29,7 +29,7 @@ export function AboutSection() {
               Melbourne's Most Trusted Air Conditioning Experts
             </h2>
             <p className="text-muted-foreground text-lg mb-6">
-              For over 15 years, Melbourne Cooling has been keeping Melbourne homes and businesses comfortable. We're a local, family-owned company committed to exceptional service and quality workmanship.
+              For over 15 years, Ash Air Solutions has been keeping Melbourne homes and businesses comfortable. We're a local, family-owned company committed to exceptional service and quality workmanship.
             </p>
             <p className="text-muted-foreground mb-8">
               Our team of fully qualified technicians are experts in all major brands and types of heating and cooling systems. From a simple split system to complex commercial installations, we deliver outstanding results every time.
