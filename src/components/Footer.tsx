@@ -1,4 +1,5 @@
 import { Phone, Mail, MapPin, Facebook, Instagram, Linkedin } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const services = [
   "Split System Installation",
@@ -26,14 +27,8 @@ export function Footer() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* Company Info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-secondary rounded-lg flex items-center justify-center">
-                <span className="font-heading font-bold text-secondary-foreground">MC</span>
-              </div>
-              <div>
-                <span className="font-heading font-bold text-lg">Melbourne</span>
-                <span className="font-heading font-bold text-lg text-secondary"> Cooling</span>
-              </div>
+            <div className="mb-4">
+              <img src={logo} alt="Ash Air Solutions" className="h-12 w-auto bg-primary-foreground rounded-lg p-2" />
             </div>
             <p className="text-primary-foreground/70 mb-6 text-sm">
               Melbourne's trusted air conditioning experts. Keeping homes and businesses comfortable for over 15 years.
@@ -108,7 +103,7 @@ export function Footer() {
       <div className="border-t border-primary-foreground/10">
         <div className="container mx-auto px-4 py-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-primary-foreground/60">
-            <p>© {new Date().getFullYear()} Melbourne Cooling. All rights reserved.</p>
+            <p>© {new Date().getFullYear()} Ash Air Solutions. All rights reserved.</p>
             <div className="flex gap-6">
               <a href="#" className="hover:text-secondary transition-colors">Privacy Policy</a>
               <a href="#" className="hover:text-secondary transition-colors">Terms of Service</a>
