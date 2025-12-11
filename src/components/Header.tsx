@@ -26,19 +26,19 @@ export function Header() {
   return (
     <>
       {/* Top Bar */}
-      <div className="bg-primary text-primary-foreground py-2 hidden md:block">
+      <div className="bg-primary text-primary-foreground py-2.5 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
             <a href="tel:0412345678" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Phone className="w-4 h-4" />
               <span>0412 345 678</span>
             </a>
-            <a href="mailto:info@melbourneac.com.au" className="flex items-center gap-2 hover:text-secondary transition-colors">
+            <a href="mailto:info@ashair.com.au" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Mail className="w-4 h-4" />
-              <span>info@melbourneac.com.au</span>
+              <span>info@ashair.com.au</span>
             </a>
           </div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 text-primary-foreground/70">
             <MapPin className="w-4 h-4" />
             <span>Servicing All Melbourne Metro Areas</span>
           </div>
@@ -48,7 +48,9 @@ export function Header() {
       {/* Main Navigation */}
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-card/95 backdrop-blur-md shadow-card" : "bg-card"
+          isScrolled 
+            ? "bg-card/95 backdrop-blur-lg shadow-card border-b border-border/50" 
+            : "bg-card"
         }`}
       >
         <div className="container mx-auto px-4">
@@ -64,7 +66,7 @@ export function Header() {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="font-medium text-foreground/80 hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
+                  className="font-medium text-foreground/70 hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
                 >
                   {link.name}
                 </a>
@@ -80,7 +82,7 @@ export function Header() {
 
             {/* Mobile Menu Button */}
             <button
-              className="lg:hidden p-2 text-foreground"
+              className="lg:hidden p-2 text-foreground hover:text-secondary transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >
@@ -91,21 +93,21 @@ export function Header() {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="lg:hidden bg-card border-t border-border animate-slide-up">
-            <div className="container mx-auto px-4 py-4">
-              <nav className="flex flex-col gap-4">
+          <div className="lg:hidden bg-card border-t border-border/50 animate-fade-in">
+            <div className="container mx-auto px-4 py-6">
+              <nav className="flex flex-col gap-1">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
-                    className="font-medium text-foreground/80 hover:text-secondary transition-colors py-2"
+                    className="font-medium text-foreground/80 hover:text-secondary hover:bg-muted transition-all py-3 px-4 rounded-xl"
                     onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {link.name}
                   </a>
                 ))}
-                <Button variant="hero" size="lg" className="mt-2" asChild>
-                  <a href="#contact">Get Free Quote</a>
+                <Button variant="hero" size="lg" className="mt-4" asChild>
+                  <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get Free Quote</a>
                 </Button>
               </nav>
             </div>

@@ -1,11 +1,11 @@
-import { Phone, Mail, MapPin, Clock, Send } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, Send, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
   { icon: Phone, label: "Phone", value: "0412 345 678", href: "tel:0412345678" },
-  { icon: Mail, label: "Email", value: "info@melbournecooling.com.au", href: "mailto:info@melbournecooling.com.au" },
+  { icon: Mail, label: "Email", value: "info@ashair.com.au", href: "mailto:info@ashair.com.au" },
   { icon: MapPin, label: "Service Area", value: "All Melbourne Metro", href: null },
   { icon: Clock, label: "Hours", value: "Mon-Sat: 7am-6pm", href: null },
 ];
@@ -31,28 +31,31 @@ export function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-muted/50">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-12">
+    <section id="contact" className="py-24 lg:py-32 bg-muted/30 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-mesh opacity-50 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16">
           {/* Left - Contact Info */}
           <div>
-            <span className="inline-block text-secondary font-semibold mb-3">Get In Touch</span>
-            <h2 className="font-heading text-3xl sm:text-4xl font-bold text-foreground mb-6">
+            <span className="inline-block text-secondary font-semibold mb-4 text-sm uppercase tracking-wider">Get In Touch</span>
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6 leading-tight">
               Ready for a More Comfortable Home?
             </h2>
-            <p className="text-muted-foreground text-lg mb-8">
+            <p className="text-muted-foreground text-lg mb-10 leading-relaxed">
               Contact us today for a free, no-obligation quote. Our friendly team is ready to help with all your heating and cooling needs.
             </p>
 
             {/* Contact Cards */}
-            <div className="grid sm:grid-cols-2 gap-4 mb-8">
+            <div className="grid sm:grid-cols-2 gap-4 mb-10">
               {contactInfo.map((item, index) => (
-                <div key={index} className="bg-card rounded-xl p-4 flex items-center gap-3 shadow-card">
-                  <div className="w-12 h-12 bg-gradient-primary rounded-lg flex items-center justify-center flex-shrink-0">
+                <div key={index} className="bg-card rounded-2xl p-5 flex items-center gap-4 shadow-card hover-lift border border-border/50">
+                  <div className="w-12 h-12 bg-gradient-primary rounded-xl flex items-center justify-center flex-shrink-0">
                     <item.icon className="w-5 h-5 text-primary-foreground" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider mb-0.5">{item.label}</p>
                     {item.href ? (
                       <a href={item.href} className="font-semibold text-foreground hover:text-secondary transition-colors">
                         {item.value}
@@ -66,12 +69,12 @@ export function ContactSection() {
             </div>
 
             {/* Emergency Banner */}
-            <div className="bg-secondary rounded-xl p-6 text-secondary-foreground">
+            <div className="bg-gradient-accent rounded-2xl p-7 text-accent-foreground">
               <h4 className="font-heading font-bold text-xl mb-2">24/7 Emergency Service</h4>
-              <p className="text-secondary-foreground/80 mb-4">
+              <p className="text-accent-foreground/80 mb-5 leading-relaxed">
                 AC broken on a hot day? We offer same-day emergency repairs across Melbourne.
               </p>
-              <Button variant="default" size="lg" asChild>
+              <Button variant="default" size="lg" className="bg-accent-foreground/20 hover:bg-accent-foreground/30 text-accent-foreground border-0" asChild>
                 <a href="tel:0412345678" className="inline-flex items-center gap-2">
                   <Phone className="w-4 h-4" /> Call Now
                 </a>
@@ -80,8 +83,8 @@ export function ContactSection() {
           </div>
 
           {/* Right - Contact Form */}
-          <div className="bg-card rounded-2xl p-8 shadow-card">
-            <h3 className="font-heading text-2xl font-bold text-foreground mb-6">Request a Free Quote</h3>
+          <div className="bg-card rounded-2xl p-8 lg:p-10 shadow-lg-custom border border-border/50">
+            <h3 className="font-heading text-2xl font-bold text-foreground mb-7">Request a Free Quote</h3>
             
             <form onSubmit={handleSubmit} className="space-y-5">
               <div className="grid sm:grid-cols-2 gap-4">
@@ -93,7 +96,7 @@ export function ContactSection() {
                     type="text"
                     id="name"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
                     placeholder="Your name"
                   />
                 </div>
@@ -105,7 +108,7 @@ export function ContactSection() {
                     type="tel"
                     id="phone"
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                    className="w-full px-4 py-3.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
                     placeholder="Your phone"
                   />
                 </div>
@@ -119,7 +122,7 @@ export function ContactSection() {
                   type="email"
                   id="email"
                   required
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                  className="w-full px-4 py-3.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
                   placeholder="your@email.com"
                 />
               </div>
@@ -130,7 +133,7 @@ export function ContactSection() {
                 </label>
                 <select
                   id="service"
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary transition-all"
+                  className="w-full px-4 py-3.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all"
                 >
                   <option value="">Select a service</option>
                   <option value="split">Split System Installation</option>
@@ -149,7 +152,7 @@ export function ContactSection() {
                 <textarea
                   id="message"
                   rows={4}
-                  className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary transition-all resize-none"
+                  className="w-full px-4 py-3.5 rounded-xl border border-border bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all resize-none"
                   placeholder="Tell us about your project..."
                 />
               </div>
@@ -162,7 +165,7 @@ export function ContactSection() {
                 disabled={isSubmitting}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
-                <Send className="w-4 h-4" />
+                <ArrowRight className="w-4 h-4" />
               </Button>
             </form>
           </div>

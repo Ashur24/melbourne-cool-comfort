@@ -33,15 +33,18 @@ const testimonials = [
 
 export function TestimonialsSection() {
   return (
-    <section id="testimonials" className="py-20 bg-primary">
-      <div className="container mx-auto px-4">
+    <section id="testimonials" className="py-24 lg:py-32 bg-primary relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-mesh opacity-30 pointer-events-none" />
+      
+      <div className="container mx-auto px-4 relative">
         {/* Section Header */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="inline-block text-secondary font-semibold mb-3">Testimonials</span>
-          <h2 className="font-heading text-3xl sm:text-4xl font-bold text-primary-foreground mb-4">
+          <span className="inline-block text-secondary font-semibold mb-4 text-sm uppercase tracking-wider">Testimonials</span>
+          <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-primary-foreground mb-5">
             What Our Customers Say
           </h2>
-          <p className="text-primary-foreground/70 text-lg">
+          <p className="text-primary-foreground/60 text-lg leading-relaxed">
             Don't just take our word for it. Here's what Melbourne homeowners have to say about our services.
           </p>
         </div>
@@ -51,20 +54,20 @@ export function TestimonialsSection() {
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-primary-foreground/10 backdrop-blur-sm rounded-2xl p-6 border border-primary-foreground/10"
+              className="glass-dark rounded-2xl p-7 hover-lift"
             >
               {/* Quote Icon */}
-              <Quote className="w-10 h-10 text-secondary/50 mb-4" />
+              <Quote className="w-10 h-10 text-secondary/30 mb-5" />
 
               {/* Rating */}
-              <div className="flex gap-1 mb-4">
+              <div className="flex gap-1 mb-5">
                 {[...Array(testimonial.rating)].map((_, i) => (
                   <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
                 ))}
               </div>
 
               {/* Text */}
-              <p className="text-primary-foreground/90 mb-6 text-lg leading-relaxed">
+              <p className="text-primary-foreground/85 mb-7 text-lg leading-relaxed">
                 "{testimonial.text}"
               </p>
 
@@ -72,9 +75,9 @@ export function TestimonialsSection() {
               <div className="flex items-center justify-between">
                 <div>
                   <p className="font-semibold text-primary-foreground">{testimonial.name}</p>
-                  <p className="text-primary-foreground/60 text-sm">{testimonial.location}</p>
+                  <p className="text-primary-foreground/50 text-sm">{testimonial.location}</p>
                 </div>
-                <span className="text-xs bg-secondary/20 text-secondary px-3 py-1 rounded-full">
+                <span className="text-xs bg-secondary/15 text-secondary px-4 py-1.5 rounded-full font-medium">
                   {testimonial.service}
                 </span>
               </div>
@@ -83,15 +86,15 @@ export function TestimonialsSection() {
         </div>
 
         {/* Google Rating */}
-        <div className="mt-12 text-center">
-          <div className="inline-flex items-center gap-2 bg-primary-foreground/10 px-6 py-3 rounded-full">
+        <div className="mt-14 text-center">
+          <div className="inline-flex items-center gap-3 glass-dark px-7 py-4 rounded-full">
             <div className="flex gap-0.5">
               {[...Array(5)].map((_, i) => (
                 <Star key={i} className="w-5 h-5 fill-secondary text-secondary" />
               ))}
             </div>
-            <span className="text-primary-foreground font-semibold">4.9/5</span>
-            <span className="text-primary-foreground/60">from 200+ Google Reviews</span>
+            <span className="text-primary-foreground font-bold">4.9/5</span>
+            <span className="text-primary-foreground/50 text-sm">from 200+ Google Reviews</span>
           </div>
         </div>
       </div>
