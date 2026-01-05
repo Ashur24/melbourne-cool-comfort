@@ -19,7 +19,7 @@ const testimonials = [{
   service: "Split System"
 }, {
   name: "Mark Davidson",
-  location: "South Yarra",
+  location: "Mickleham",
   rating: 5,
   text: "We've used Ash Air Solutions for our office HVAC needs for years. Reliable, efficient, and always professional. Wouldn't go anywhere else.",
   service: "Commercial HVAC"
