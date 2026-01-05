@@ -1,16 +1,19 @@
+import fujitsuLogo from "@/assets/brands/fujitsu.webp";
+import carrierLogo from "@/assets/brands/carrier.webp";
+import hisenseLogo from "@/assets/brands/hisense.webp";
+import daikinLogo from "@/assets/brands/daikin.jpg";
+import mideaLogo from "@/assets/brands/midea.jpg";
+import mitsubishiHeavyLogo from "@/assets/brands/mitsubishi-heavy.png";
+import mitsubishiElectricLogo from "@/assets/brands/mitsubishi-electric.jpg";
+
 const brands = [
-  { name: "Daikin", className: "font-bold" },
-  { name: "Mitsubishi Electric", className: "font-bold" },
-  { name: "Fujitsu", className: "font-bold" },
-  { name: "Panasonic", className: "font-bold" },
-  { name: "LG", className: "font-black" },
-  { name: "Samsung", className: "font-bold" },
-  { name: "Carrier", className: "font-bold" },
-  { name: "Toshiba", className: "font-bold" },
-  { name: "Hitachi", className: "font-bold" },
-  { name: "Actron Air", className: "font-bold" },
-  { name: "Brivis", className: "font-bold" },
-  { name: "Rinnai", className: "font-bold" },
+  { name: "Daikin", logo: daikinLogo },
+  { name: "Mitsubishi Electric", logo: mitsubishiElectricLogo },
+  { name: "Mitsubishi Heavy Industries", logo: mitsubishiHeavyLogo },
+  { name: "Fujitsu", logo: fujitsuLogo },
+  { name: "Carrier", logo: carrierLogo },
+  { name: "Hisense", logo: hisenseLogo },
+  { name: "Midea", logo: mideaLogo },
 ];
 
 export function BrandsSection() {
@@ -36,9 +39,11 @@ export function BrandsSection() {
               key={`first-${index}`}
               className="flex-shrink-0 mx-8 flex items-center justify-center"
             >
-              <span className={`text-2xl md:text-3xl text-foreground/70 hover:text-primary transition-colors duration-300 whitespace-nowrap ${brand.className}`}>
-                {brand.name}
-              </span>
+              <img 
+                src={brand.logo} 
+                alt={brand.name}
+                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+              />
             </div>
           ))}
           {/* Duplicate set for seamless loop */}
@@ -47,9 +52,11 @@ export function BrandsSection() {
               key={`second-${index}`}
               className="flex-shrink-0 mx-8 flex items-center justify-center"
             >
-              <span className={`text-2xl md:text-3xl text-foreground/70 hover:text-primary transition-colors duration-300 whitespace-nowrap ${brand.className}`}>
-                {brand.name}
-              </span>
+              <img 
+                src={brand.logo} 
+                alt={brand.name}
+                className="h-12 md:h-16 w-auto object-contain grayscale hover:grayscale-0 opacity-70 hover:opacity-100 transition-all duration-300"
+              />
             </div>
           ))}
         </div>
