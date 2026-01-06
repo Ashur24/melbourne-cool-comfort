@@ -4,7 +4,7 @@ import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 
 const contactInfo = [
-  { icon: Phone, label: "Phone", value: "0412 345 678", href: "tel:0412345678" },
+  { icon: Phone, label: "Phone", value: "0417 066 737", href: "tel:0417066737" },
   { icon: Mail, label: "Email", value: "admin@ashairsolutions.com", href: "mailto:admin@ashairsolutions.com" },
   { icon: MapPin, label: "Service Area", value: "All Melbourne Metro", href: null },
   { icon: Clock, label: "Hours", value: "Mon-Sat: 7am-5pm", href: null },
