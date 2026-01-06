@@ -21,7 +21,7 @@ export function HeroSection() {
         <img src={heroImage} alt="Professional air conditioning installation in Melbourne home" className="w-full h-full object-cover scale-105" />
         <div className="absolute inset-0 bg-hero-overlay" />
         {/* Mesh gradient overlay */}
-        <div className="absolute inset-0 bg-mesh opacity-60" />
+        <div className="absolute inset-0 bg-mesh opacity-100" />
       </div>
 
       {/* Content */}
