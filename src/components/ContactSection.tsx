@@ -7,7 +7,7 @@ const contactInfo = [
   { icon: Phone, label: "Phone", value: "0412 345 678", href: "tel:0412345678" },
   { icon: Mail, label: "Email", value: "info@ashair.com.au", href: "mailto:info@ashair.com.au" },
   { icon: MapPin, label: "Service Area", value: "All Melbourne Metro", href: null },
-  { icon: Clock, label: "Hours", value: "Mon-Sat: 7am-6pm", href: null },
+  { icon: Clock, label: "Hours", value: "Mon-Sat: 7am-5pm", href: null },
 ];
 
 export function ContactSection() {
