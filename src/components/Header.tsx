@@ -2,19 +2,25 @@ import { useState, useEffect } from "react";
 import { Menu, X, Phone, Mail, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import logo from "@/assets/logo.jpg";
-
-const navLinks = [
-  { name: "Home", href: "#home" },
-  { name: "Services", href: "#services" },
-  { name: "About", href: "#about" },
-  { name: "Testimonials", href: "#testimonials" },
-  { name: "Contact", href: "#contact" },
-];
-
+const navLinks = [{
+  name: "Home",
+  href: "#home"
+}, {
+  name: "Services",
+  href: "#services"
+}, {
+  name: "About",
+  href: "#about"
+}, {
+  name: "Testimonials",
+  href: "#testimonials"
+}, {
+  name: "Contact",
+  href: "#contact"
+}];
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
@@ -22,9 +28,7 @@ export function Header() {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-
-  return (
-    <>
+  return <>
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-2.5 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
@@ -46,31 +50,19 @@ export function Header() {
       </div>
 
       {/* Main Navigation */}
-      <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
-          isScrolled 
-            ? "bg-card/95 backdrop-blur-lg shadow-card border-b border-border/50" 
-            : "bg-card"
-        }`}
-      >
+      <header className={`sticky top-0 z-50 transition-all duration-300 ${isScrolled ? "bg-card/95 backdrop-blur-lg shadow-card border-b border-border/50" : "bg-card"}`}>
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-20">
             {/* Logo */}
             <a href="#home" className="flex items-center">
-              <img src={logo} alt="Ash Air Solutions" className="h-12 sm:h-14 w-auto" />
+              <img src={logo} alt="Ash Air Solutions" className="h-12 sm:h-14 w-auto border-card" />
             </a>
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-8">
-              {navLinks.map((link) => (
-                <a
-                  key={link.name}
-                  href={link.href}
-                  className="font-medium text-foreground/70 hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full"
-                >
+              {navLinks.map(link => <a key={link.name} href={link.href} className="font-medium text-foreground/70 hover:text-secondary transition-colors relative after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-0.5 after:bg-secondary after:transition-all after:duration-300 hover:after:w-full">
                   {link.name}
-                </a>
-              ))}
+                </a>)}
             </nav>
 
             {/* CTA Button */}
@@ -81,39 +73,25 @@ export function Header() {
             </div>
 
             {/* Mobile Menu Button */}
-            <button
-              className="lg:hidden p-2 text-foreground hover:text-secondary transition-colors"
-              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              aria-label="Toggle menu"
-            >
+            <button className="lg:hidden p-2 text-foreground hover:text-secondary transition-colors" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Toggle menu">
               {isMobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
         </div>
 
         {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <div className="lg:hidden bg-card border-t border-border/50 animate-fade-in">
+        {isMobileMenuOpen && <div className="lg:hidden bg-card border-t border-border/50 animate-fade-in">
             <div className="container mx-auto px-4 py-6">
               <nav className="flex flex-col gap-1">
-                {navLinks.map((link) => (
-                  <a
-                    key={link.name}
-                    href={link.href}
-                    className="font-medium text-foreground/80 hover:text-secondary hover:bg-muted transition-all py-3 px-4 rounded-xl"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
+                {navLinks.map(link => <a key={link.name} href={link.href} className="font-medium text-foreground/80 hover:text-secondary hover:bg-muted transition-all py-3 px-4 rounded-xl" onClick={() => setIsMobileMenuOpen(false)}>
                     {link.name}
-                  </a>
-                ))}
+                  </a>)}
                 <Button variant="hero" size="lg" className="mt-4" asChild>
                   <a href="#contact" onClick={() => setIsMobileMenuOpen(false)}>Get Free Quote</a>
                 </Button>
               </nav>
             </div>
-          </div>
-        )}
+          </div>}
       </header>
-    </>
-  );
+    </>;
 }
