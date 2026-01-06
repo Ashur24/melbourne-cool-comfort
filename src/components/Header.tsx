@@ -33,13 +33,13 @@ export function Header() {
       <div className="bg-primary text-primary-foreground py-2.5 hidden md:block">
         <div className="container mx-auto px-4 flex justify-between items-center text-sm">
           <div className="flex items-center gap-6">
-            <a href="tel:0412345678" className="flex items-center gap-2 hover:text-secondary transition-colors">
+            <a href="tel:0417066737" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Phone className="w-4 h-4" />
-              <span>0412 345 678</span>
+              <span>0417 066 737</span>
             </a>
-            <a href="mailto:info@ashair.com.au" className="flex items-center gap-2 hover:text-secondary transition-colors">
+            <a href="mailto:admin@ashairsolutions.com" className="flex items-center gap-2 hover:text-secondary transition-colors">
               <Mail className="w-4 h-4" />
-              <span>info@ashair.com.au</span>
+              <span>admin@ashairsolutions.com</span>
             </a>
           </div>
           <div className="flex items-center gap-2 text-primary-foreground/70">

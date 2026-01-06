@@ -76,13 +76,13 @@ export function Footer() {
           <div>
             <h4 className="font-heading font-bold text-lg mb-5">Contact Us</h4>
             <div className="space-y-4">
-              <a href="tel:0412345678" className="flex items-center gap-3 text-primary-foreground/60 hover:text-secondary transition-colors text-sm">
+              <a href="tel:0417066737" className="flex items-center gap-3 text-primary-foreground/60 hover:text-secondary transition-colors text-sm">
                 <Phone className="w-4 h-4" />
-                0412 345 678
+                0417 066 737
               </a>
-              <a href="mailto:info@ashair.com.au" className="flex items-center gap-3 text-primary-foreground/60 hover:text-secondary transition-colors text-sm">
+              <a href="mailto:admin@ashairsolutions.com" className="flex items-center gap-3 text-primary-foreground/60 hover:text-secondary transition-colors text-sm">
                 <Mail className="w-4 h-4" />
-                info@ashair.com.au
+                admin@ashairsolutions.com
               </a>
               <div className="flex items-start gap-3 text-primary-foreground/60 text-sm">
                 <MapPin className="w-4 h-4 mt-0.5 flex-shrink-0" />
